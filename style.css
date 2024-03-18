@@ -1,0 +1,371 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital@1&display=swap');
+
+/* general style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter Tight', sans-serif;
+    user-select: none;
+}
+
+/* variables */
+:root {
+    --color-red: #ff0000;
+    --color-redDark: #b30000;
+    --color-redDarkTransparent: #b3000050;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-gray: #999;
+    --color-transparent: #00000060;
+}
+
+/* styles background  descomentalo si quieres que se vea o viceversa*/
+body {
+    /*background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23180000' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23310000' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23490000' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23610000' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23790000' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23920000' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23AA0000' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;*/
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    height: 2px;
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--color-red);
+    border-radius: 10px;
+}
+
+/*Style video comentalo si quieres que el video no se ve o viceversa*/
+
+.mvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* section logo */
+.logo {
+    width: 100%;
+    gap: 5px;
+    display: inline-flex;
+    position: absolute;
+    z-index: 10;
+    justify-content: center;
+}
+
+.logo h1 {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.logo h1:hover {
+    text-shadow: 0 0 20px var(--color-red);
+    color: var(--color-red);
+}
+
+.logo span {
+    font-size: 2rem;
+    font-family: cursive;
+    font-style: italic;
+    color: var(--color-redDark);
+}
+
+.logo .challenge {
+    margin-top: 30px;
+    position: absolute;
+    font-size: 48px;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color-redDark);
+    text-stroke: 2px var(--color-red);
+    animation: neonBorder 2s linear infinite;
+}
+
+/* section content */
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* section left */
+.content-left {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    background: var(--color-transparent);
+}
+
+.content-left-input textarea {
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 30px;
+    width: 70%;
+    margin: 100px 0 0 40px;
+    border-radius: 10px;
+    font-size: 2rem;
+    background: transparent;
+    color: var(--color-red);
+}
+
+.content-left-input textarea::-webkit-scrollbar {
+    height: 2px;
+    width: 10px;
+}
+
+.content-left-input textarea::-webkit-scrollbar-thumb {
+    background: var(--color-transparent);
+    border-radius: 10px;
+}
+
+.content-left-input textarea:hover,
+.content-left-input textarea:focus {
+    background: var(--color-background);
+}
+
+.content-left-input textarea::placeholder {
+    color: var(--color-redDark);
+}
+
+.content-left-p {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    gap: 10px;
+    font-size: 1.3rem;
+}
+
+.content-left-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.content-left-btns .encrypt {
+    background: var(--color-redDark);
+    color: var(--color-black);
+}
+
+.content-left-btns .encrypt:hover {
+    background: var(--color-red);
+}
+
+/* style buttons global*/
+button {
+    cursor: pointer;
+    outline: none;
+    padding: 25px 10px;
+    margin: 50px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+    background: var(--color-gray);
+    color: var(--color-black)
+}
+
+button:hover {
+    background: var(--color-red);
+    box-shadow: 0 5px 15px 2px var(--color-red);
+}
+
+/* section right */
+.content-right {
+    transition: .9s all;
+    background: var(--color-transparent);
+    padding: 10px;
+    margin: 0 30px;
+    width: 60%;
+    height: 100%;
+    border-radius: 10px;
+    transition: .3s all;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-right-text {
+	width: 100%;
+    padding: 120px 120px 0 50px;
+}
+
+.content-right-p0 {
+    padding: 10px;
+	font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-red);
+    text-shadow: 0 0 10px var(--color-redDark), 0 0 20px var(--color-redDark), 0 0 30px var(--color-redDark);
+    border-radius: 10px;
+    box-shadow: 0 0 20px 5px var(--color-redDark);
+    background: var(--color-redDarkTransparent);
+}
+
+.content-right-p1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-red);
+}
+
+.content-right-p2 {
+    font-size: 1.5rem;
+    color: var(--color-gray);
+}
+
+.content-right-btns {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Animation */
+
+@keyframes neonBorder {
+    0%, 100% {
+        -webkit-text-stroke: 1px var(--color-fontTextRed);
+        text-stroke: 1px var(--color-fontTextRed);
+    }
+    50% {
+        -webkit-text-stroke: 3px var(--color-redDark);
+        text-stroke: 3px var(--color-redDark);
+    }
+}
+
+/*media querys*/
+@media (max-width: 900px) and (min-width: 369px) {
+    .content {
+        display: inline-block;
+        flex-direction: column;
+    }
+
+    .content-left-input textarea {
+        margin-top: 100px;
+        width: 90%;
+    }
+
+    .content-left-btns {
+        width: 100%;
+    }
+
+    .content-right {
+        margin: 20px auto;
+        overflow: hidden;
+        width: 80%;
+    }
+
+    .content-right-text {
+        padding: 150px;
+    }
+
+    .content-right-btns {
+        position: absolute;
+        width: 100%;
+        margin: auto;
+        padding: auto 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        display: none;
+    }
+
+    .content {
+        display: inline-block;
+        flex-direction: column;
+    }
+
+    .content-left-input textarea {
+        margin-top: 100px;
+        width: 90%;
+    }
+
+    .content-left-btns {
+        width: 100%;
+    }
+
+    .content-right {
+        margin: 20px auto;
+        overflow: hidden;
+        width: 80%;
+    }
+
+    .content-right-text {
+        padding: 100px;
+    }
+
+    .content-right-btns {
+        position: absolute;
+        width: 100%;
+        margin: auto;
+        padding: auto 10px;
+    }
+}
+
+@media (max-width: 368px) {
+    .logo h1 {
+        display: none;
+    }
+
+    .content {
+        display: inline-block;
+        flex-direction: column;
+    }
+
+    .content-left-input textarea {
+        margin-top: 100px;
+        width: 90%;
+    }
+
+    .content-left-btns {
+        width: 100%;
+    }
+
+    .content-right {
+        margin: 20px auto;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+    }
+
+    .content-right-text {
+        padding: 100px 0;
+    }
+
+    .content-right-btns {
+        position: absolute;
+        width: 100%;
+        margin: auto;
+        padding: auto 10px;
+    }
+}
